@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "_site"],
+  "include": ["eleventy.config.js"]
+}
