@@ -6,10 +6,12 @@
     <title>{{ title }}</title>
     <meta name="description" value="{{ description }}">
     <link rel="stylesheet" href="styles/global.css"/>
-    <script type="text/javascript" href="js/bsky-client.ts" />
+
 
   </head>
   <body>
     {{ content | safe }}
+    {{ viteScripts }}
+    <script type="module" src="{{ 'scripts/render-posts.js' | url }}"></script>
   </body>
 </html>

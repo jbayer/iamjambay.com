@@ -16,7 +16,7 @@
 # build
 /build
 /_site
-global.out.css
+/dist
 
 # misc
 .DS_Store

@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist/scripts",
     "skipLibCheck": true
   },
   "exclude": ["node_modules", "_site"],
-  "include": ["eleventy.config.js"]
+  "include": ["src/_includes/scripts/**/*.ts"]
 }
