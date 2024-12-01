@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="description" value="{{ description }}">
-    <link rel="stylesheet" href="styles/global.css"/>
+    <link rel="stylesheet" href="styles/global.css" />
 
 
   </head>
   <body>
     {{ content | safe }}
-    {{ viteScripts }}
-    <script type="module" src="{{ 'scripts/render-posts.js' | url }}"></script>
+
+    {% viteScripts %}
   </body>
 </html>

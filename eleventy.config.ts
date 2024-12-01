@@ -1,30 +1,34 @@
 import "tsx/esm";
 import { renderToStaticMarkup } from "react-dom/server";
-import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
+import fs from 'fs';
+import path from 'path';
+import {fileURLToPath} from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default function(eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyVitePlugin, {
-    build: {
-      manifest: true,
-      rollupOptions: {
-        input: 'src/_includes/scripts/render-posts.ts'
-      },
-    },
-    server: {
-      middlewareMode: true,
-      watch: {
-        usePolling: true,
-      },
-      proxy: {
-        // Proxy 11ty's output to serve with Vite
-        '/': 'http://localhost:8080',
-      },
-    },
-  });
 
   eleventyConfig.addPassthroughCopy({
     "dist/styles": "styles",
     "dist/scripts": "scripts"
+  });
+
+  eleventyConfig.setServerOptions({
+    watch: ['./src/_includes/scripts/**/*.ts'], // Watch TypeScript files
+  });
+
+
+  eleventyConfig.addShortcode('viteScripts', () => {
+    const manifestPath = path.resolve(__dirname, 'dist/scripts/.vite/manifest.json');
+    if (fs.existsSync(manifestPath)) {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+      const mainJs = manifest['src/_includes/scripts/main.ts']?.file;
+      if (mainJs) {
+        return `<script type="module" src="/scripts/${mainJs}"></script>`;
+      }
+    }
+    return ''; // Fallback if manifest doesn't exist
   });
 
   eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
@@ -45,7 +49,6 @@ export default function(eleventyConfig) {
     dir: {
       input: "src",
       includes: "_includes",
-      data: "_data",
       output: "_site",
     },
 

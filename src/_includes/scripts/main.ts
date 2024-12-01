@@ -3,7 +3,7 @@ import {fetchLatestOriginalPosts} from './bsky-client.js'; // Adjust the import 
 /**
  * Renders the latest original posts into an HTML container on the page.
  */
-async function renderPosts(containerId: string, username: string, postLimit: number = 10) {
+async function main(containerId: string, username: string, postLimit: number = 10) {
     // Get the container element where posts will be rendered
     const container = document.getElementById(containerId);
 
@@ -18,7 +18,6 @@ async function renderPosts(containerId: string, username: string, postLimit: num
     try {
         // Fetch the latest original posts
         const posts = await fetchLatestOriginalPosts(username, postLimit);
-        console.log("hi");
         // Render posts into the container
         if (posts.length === 0) {
             container.innerHTML = '<p>No posts found.</p>';
@@ -35,6 +34,5 @@ async function renderPosts(containerId: string, username: string, postLimit: num
 
 // Hook the function to run after the page loads
 window.addEventListener('load', () => {
-    console.log("hello, world");
-    renderPosts('posts-container', 'apurvamehta.com');
+    main('posts-container', 'apurvamehta.com');
 });

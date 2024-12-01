@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/_includes/css/tailwind.css -o global.out.css",
-    "build:js": "npx tsc",
-    "start": "npm run build:css && npm run build:js && tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts --serve --incremental"
+    "build:css": "tailwindcss -i ./src/_includes/css/global.css -o dist/styles/global.css --minify",
+    "build:11ty": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts ",
+    "build:js": "vite build",
+    "build": "npm run build:css && npm run build:js &&  npm run build:11ty",
+    "dev:css": "tailwindcss -i ./src/_includes/css/global.css -o dist/styles/global.css --watch",
+    "dev:js": "vite",
+    "dev:11ty": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts  --serve --incremental",
+    "dev": "concurrently \"npm run dev:css\"  \"npm run dev:11ty\" \"npm run dev:js\"",
+    "clean": "rm -rf _site dist"
   },
   "type": "module",
   "keywords": [],
@@ -13,9 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-vite": "^5.0.2",
     "@atproto/api": "^0.13.18",
-    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.15",
@@ -23,6 +28,7 @@
     "typescript": "^5.7.2"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "vite": "^6.0.1"
   }
 }

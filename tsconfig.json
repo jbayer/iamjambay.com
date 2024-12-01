@@ -8,5 +8,7 @@
     "skipLibCheck": true
   },
   "exclude": ["node_modules", "_site"],
-  "include": ["src/_includes/scripts/**/*.ts"]
+  "include": [
+    "src/_includes/scripts/**/*.ts"
+  ]
 }
