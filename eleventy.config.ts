@@ -11,7 +11,8 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     "dist/styles": "styles",
-    "dist/scripts": "scripts"
+    "dist/scripts": "scripts",
+    "src/img": "img"
   });
 
   eleventyConfig.setServerOptions({

@@ -42,7 +42,7 @@ async function main(containerId: string, username: string, postLimit: number = 1
                         <!-- Dot -->
                         <div class="relative z-10 w-8 h-8 bg-blue-500 rounded-full flex-shrink-0 ml-0"></div>
                         <!-- Post Content -->
-                         <div class="ml-8 flex-1">
+                         <div class="ml-8 flex-1 border-b border-gray-200 pb-4">
                              <p class="text-xs text-gray-500">${formatDate(post.record.createdAt)}</p>
                              <p class="text-gray-700 mt-2">
                               ${post.record.text}
