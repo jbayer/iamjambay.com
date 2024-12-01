@@ -19,6 +19,11 @@ export default function(eleventyConfig) {
   });
 
 
+  // Watch TypeScript and CSS files and trigger rebuilds
+  eleventyConfig.setBrowserSyncConfig({
+    files: ["./dist/scripts/**/*.js", "./dist/styles/**/*.css"],
+  });
+
   eleventyConfig.addShortcode('viteScripts', () => {
     const manifestPath = path.resolve(__dirname, 'dist/scripts/.vite/manifest.json');
     if (fs.existsSync(manifestPath)) {

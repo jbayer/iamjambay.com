@@ -7,10 +7,12 @@
     "build:11ty": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts ",
     "build:js": "vite build",
     "build": "npm run build:css && npm run build:js &&  npm run build:11ty",
+
     "dev:css": "tailwindcss -i ./src/_includes/css/global.css -o dist/styles/global.css --watch",
     "dev:js": "vite",
     "dev:11ty": "tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts  --serve --incremental",
     "dev": "concurrently \"npm run dev:css\"  \"npm run dev:11ty\" \"npm run dev:js\"",
+    
     "clean": "rm -rf _site dist"
   },
   "type": "module",

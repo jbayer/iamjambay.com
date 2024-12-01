@@ -4,10 +4,49 @@ title: Apurva Mehta
 description: Personal home page of Apurva Mehta. Engineer and Entrepreneur.
 ---
 
-<h1 class="text-3xl font-bold text-center mt-5 mb-2">Hello World!!</h1>
+ <!-- Container -->
+  <div class="max-w-3xl mx-auto p-4">
 
-<p class="text-xl text-center">Exploring Eleventy. Eleventy is a static site generator. </p>
+    <!-- Profile Section -->
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+      <div class="flex items-center space-x-6">
+        <!-- Profile Photo -->
+        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="w-24 h-24 rounded-full shadow-lg">
 
-<div class="flex items-center justify-center width:50% margin-right:auto margin-left:auto ">
-<ul id='posts-container'></ul>
-</div>
+        <!-- Bio and Social Links -->
+        <div>
+          <h1 class="text-2xl font-bold text-gray-800">Apurva Mehta</h1>
+          <p class="text-gray-600 mt-2">
+            A short bio about yourself. Mention your work, interests, or hobbies in a concise way.
+          </p>
+          <!-- Social Links -->
+          <div class="mt-4 flex space-x-4">
+            <a href="https://github.com/yourusername" target="_blank" class="text-gray-600 hover:text-gray-900">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.64.5 12c0 5.08 3.293 9.4 7.856 10.94.574.106.782-.25.782-.556v-2.1c-3.201.695-3.874-1.544-3.874-1.544-.522-1.33-1.275-1.682-1.275-1.682-.927-.634.07-.622.07-.622 1.025.07 1.564 1.05 1.564 1.05.91 1.55 2.388 1.1 2.968.843.09-.66.355-1.1.647-1.354-2.556-.29-5.244-1.292-5.244-5.752 0-1.27.457-2.31 1.2-3.12-.12-.292-.52-1.47.12-3.06 0 0 .97-.31 3.18 1.2.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.2-1.5 3.17-1.2 3.17-1.2.64 1.59.24 2.77.12 3.06.75.81 1.2 1.85 1.2 3.12 0 4.47-2.69 5.46-5.25 5.74.37.31.69.91.69 1.82v2.7c0 .31.2.66.79.55C20.7 21.4 24 17.08 24 12c0-6.36-5.15-11.5-12-11.5z"></path></svg>
+            </a>
+            <a href="https://blueskyweb.xyz/user/apurvamehta.com" target="_blank" class="text-gray-600 hover:text-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M21.558 12.213c-1.835-6.39-4.717-7.83-4.717-7.83s-.884-.243-2.18-.243c-3.13 0-4.217 2.473-4.217 2.473s-1.027-2.473-4.217-2.473c-1.297 0-2.181.243-2.181.243S3.364 5.823 1.528 12.213c-.004.016-.004.035-.004.052 0 2.086 2.022 3.874 5.133 5.057 1.012.39 2.141.721 3.324 1.012 1.054.26 2.173.444 3.37.444 1.196 0 2.316-.183 3.368-.444 1.182-.292 2.312-.622 3.324-1.012 3.112-1.184 5.133-2.971 5.133-5.057 0-.017 0-.036-.003-.052zm-4.828 5.172c-2.248 2.248-9.103 2.248-11.35 0s-2.248-9.103 0-11.35 9.103-2.248 11.35 0 2.248 9.103 0 11.35z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bluesky Posts Section -->
+    <section class="text-2xl font-bold pb-4 mb-3">What's on my mind</section>
+    <section id="posts-container" class="relative">
+     <div class="absolute inset-0 left-4 h-full border-l-2 border-gray-300"></div>
+     <div id="posts-content"></div>
+     <div class="relative flex items-center mb-8">
+         <!-- Dot -->
+         <div class="relative z-10 w-8 h-8 bg-blue-500 rounded-full flex-shrink-0 ml-0"></div>
+         <!-- View More Link -->
+         <div class="ml-8 flex-1">
+           <a href="https://bsky.app/profile/apurvamehta.com" target="_blank" class="text-blue-500 font-light hover:underline">
+             Read more on Bluesky..
+           </a>
+         </div>
+       </div>
+    </section>
+
+  </div>

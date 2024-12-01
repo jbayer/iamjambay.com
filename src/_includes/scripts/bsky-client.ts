@@ -1,5 +1,13 @@
 import { AtpAgent } from "@atproto/api";
+import {PostView} from "@atproto/api/dist/client/types/app/bsky/feed/defs.js";
 
+
+export function getPostUrl(post: PostView): string {
+    const uriParts = post.uri.split("/");
+    const postId = uriParts[uriParts.length - 1]; // Get the last part of the URI
+    const profileHandle = post.author.handle; // Get the author's handle
+    return `https://bsky.app/profile/${profileHandle}/post/${postId}`;
+}
 
 export async function fetchLatestOriginalPosts(username: string, desiredCount = 10) {
     const atProtoAgent = new AtpAgent({

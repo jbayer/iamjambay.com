@@ -6,12 +6,12 @@
     <title>{{ title }}</title>
     <meta name="description" value="{{ description }}">
     <link rel="stylesheet" href="styles/global.css" />
-
-
   </head>
-  <body>
+
+  <body class="font-sans leading-relaxed antialiased">
     {{ content | safe }}
 
     {% viteScripts %}
   </body>
+
 </html>
