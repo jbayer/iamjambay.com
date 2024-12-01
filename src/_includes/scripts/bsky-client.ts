@@ -33,7 +33,7 @@ export async function fetchLatestOriginalPosts(username: string, desiredCount = 
                 .filter(item => {
                     const post = item.post.record;
                     // @ts-ignore
-                    return !post.reply && !item.reason && !post.embed; // Exclude replies and reposts
+                    return !post.reply && !item.reason // Exclude replies and reposts
                 })
                 .map(item => item.post)
 
