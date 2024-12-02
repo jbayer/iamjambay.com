@@ -9,6 +9,10 @@ export function getPostUrl(post: PostView): string {
     return `https://bsky.app/profile/${profileHandle}/post/${postId}`;
 }
 
+export function getRepostsAndQuotes(post: PostView): number {
+    return post.quoteCount + post.repostCount;
+}
+
 export async function fetchLatestOriginalPosts(username: string, desiredCount = 10) {
     const atProtoAgent = new AtpAgent({
         // App View URL
