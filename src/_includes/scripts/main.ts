@@ -82,5 +82,5 @@ async function main(containerId: string, username: string, postLimit: number = 1
 
 // Hook the function to run after the page loads
 window.addEventListener("DOMContentLoaded", () => {
-    main('posts-content', 'apurvamehta.com');
+    main('posts-content', 'jambay.bsky.social');
 });
