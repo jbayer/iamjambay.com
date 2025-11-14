@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/calendar",
+      "destination": "https://calendar.app.google/5Q5r3sZ16ik57rCA7",
+      "permanent": true
+    }
+  ]
+}
