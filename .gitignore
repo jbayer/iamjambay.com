@@ -39,3 +39,6 @@ next-env.d.ts
 
 # IDEA
 .idea
+
+# flox
+./flox/
